@@ -1,25 +1,25 @@
-verkkomaksut
+checkout
 ------------
 
 |build status|_
 
-.. |build status| image:: https://secure.travis-ci.org/fastmonkeys/python-verkkomaksut.png?branch=master
+.. |build status| image:: https://secure.travis-ci.org/tuomasb/python-checkout.png?branch=master
    :alt: Build Status
-.. _build status: http://travis-ci.org/fastmonkeys/python-verkkomaksut
+.. _build status: http://travis-ci.org/tuomasb/python-checkout
 
-Python wrapper for the JSON API of Suomen Verkkomaksut.
+Python wrapper for the Checkout Finland API.
 
 Installation
 ------------
 
 ::
 
-    $ pip install verkkomaksut
+    $ pip install checkout
 
 Resources
 ---------
 
-- `Issue Tracker <http://github.com/fastmonkeys/python-verkkomaksut/issues>`_
-- `Code <http://github.com/fastmonkeys/python-verkkomaksut>`_
+- `Issue Tracker <http://github.com/tuomasb/python-checkout/issues>`_
+- `Code <http://github.com/tuomasb/python-checkout>`_
 - `Development Version
-  <http://github.com/fastmonkeys/python-verkkomaksut/zipball/master#egg=verkkomaksut-dev>`_
+  <http://github.com/tuomasb/python-checkout/zipball/master#egg=checkout-dev>`_

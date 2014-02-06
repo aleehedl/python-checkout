@@ -1,15 +1,15 @@
 """
-verkkomaksut
+checkout
 ============
 
-Python wrapper for the JSON API of Suomen Verkkomaksut.
+Python wrapper for the Checkout Finland API.
 
 Links
 -----
 
-* `documentation <http://packages.python.org/verkkomaksut>`_
+* `documentation <http://packages.python.org/checkout>`_
 * `development version
-  <http://github.com/fastmonkeys/python-verkkomaksut/zipball/master#egg=verkkomaksut-dev>`_
+  <http://github.com/tuomasb/python-checkout/zipball/master#egg=checkout-dev>`_
 
 """
 import os
@@ -22,24 +22,24 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 
 
 def get_version():
-    filename = os.path.join(HERE, 'verkkomaksut', '__init__.py')
+    filename = os.path.join(HERE, 'checkout', '__init__.py')
     contents = open(filename).read()
     pattern = r"^__version__ = '(.*?)'$"
     return re.search(pattern, contents, re.MULTILINE).group(1)
 
 
 setup(
-    name='verkkomaksut',
+    name='checkout',
     version=get_version(),
-    description='Python wrapper for the JSON API of Suomen Verkkomaksut.',
+    description='Python wrapper for the Checkout Finland API.',
     long_description=(
         open('README.rst').read() + '\n' +
         open('CHANGES.rst').read()
     ),
-    author='Janne Vanhala',
-    author_email='janne@fastmonkeys.com',
-    url='http://github.com/fastmonkeys/python-verkkomaksut',
-    packages=['verkkomaksut'],
+    author='Tuomas Blomqvist, Janne Vanhala',
+    author_email='tuomas.blomqvist@gmail.com, janne@fastmonkeys.com',
+    url='http://github.com/tuomasb/python-checkout',
+    packages=['checkout'],
     include_package_data=True,
     license='BSD',
     zip_safe=False,
