@@ -14,6 +14,7 @@ import hashlib
 import hmac
 import json
 import requests
+import sys
 import xml.etree.ElementTree as ET
 
 class CheckoutException(Exception):
@@ -260,6 +261,8 @@ class Checkout(object):
                   params["ADDRESS"], params["POSTCODE"], params["POSTOFFICE"], merchant_secret]
 
         base = '+'.join(fields)
+        if sys.version_info >= (3, 0, 0):
+            base = base.encode('utf-8')
         return hashlib.md5(base).hexdigest().upper()
 
     def validate_payment_return(self, mac, version, order_number, order_reference, payment, status, algorithm):
@@ -286,4 +289,8 @@ class Checkout(object):
         """
         fields = [version, order_number, order_reference, payment, status, algorithm]
         base = '&'.join(fields)
-        return mac == hmac.new(self.merchant_secret, base, hashlib.sha256).hexdigest().upper()
+        ms = self.merchant_secret
+        if sys.version_info >= (3, 0, 0):
+            base = base.encode('utf-8')
+            ms = ms.encode('utf-8')
+        return mac == hmac.new(ms, base, hashlib.sha256).hexdigest().upper()
